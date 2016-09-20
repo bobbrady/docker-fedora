@@ -19,7 +19,7 @@ EXPOSE 3000
 WORKDIR /opt/node
 COPY . /opt/node/
 
-# Get all node proejct dependencies
+# Get all node project dependencies
 RUN npm install
 
 # Create a "node" user, chown the working dir, run as "node"

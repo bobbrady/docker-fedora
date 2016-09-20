@@ -1,4 +1,4 @@
-node-share:
+fedora-node:
   build: .
   ports:
     - '3000:3000'

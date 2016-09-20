@@ -1,0 +1,8 @@
+node-share:
+  build: .
+  ports:
+    - '3000:3000'
+  volumes:
+    - ./src:/opt/node/src
+  environment:
+    - HOST_USER_ID

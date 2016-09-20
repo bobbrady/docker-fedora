@@ -32,3 +32,29 @@ drwxr-xr-x. 3 root root   21 Sep 20 17:54 node_modules
 -rw-rw-r--. 1 root root  273 Sep 20 01:14 package.json
 drwxrwxr-x. 2 node node 4.0K Sep 20 16:19 src
 ```
+
+* Start the example "Hello World!" node server:
+
+```bash
+[node@806d0ee8f702 node]$ npm start
+
+> docker_web_app@1.0.0 start /opt/node
+> node src/server.js
+
+Running on http://localhost:3000
+
+```
+* Open another terminal and verify you can access the server:
+
+```bash
+$ curl -i localhost:3000
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 12
+ETag: W/"c-7Qdih1MuhjZehB6Sv8UNjA"
+Date: Tue, 20 Sep 2016 18:36:33 GMT
+Connection: keep-alive
+
+Hello World!
+```

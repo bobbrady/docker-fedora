@@ -15,7 +15,7 @@ CONTAINER_USER_ID=${HOST_USER_ID:-9001}
 
 echo "Starting Container with user \"node\" having UID : $CONTAINER_USER_ID"
 useradd --shell /bin/bash -u $CONTAINER_USER_ID -o -c "" -m node
-chown -R node:node $HOME
+chown -R node:node /opt/node
 
 if [[ $# -eq 0 ]] ; then
     echo 'No arguments passed, run bash as default command'

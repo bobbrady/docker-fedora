@@ -1,13 +1,10 @@
 {
-  "name": "docker_web_app",
+  "name": "docker_fedora web_app",
   "version": "1.0.0",
-  "description": "Node.js on Docker",
+  "description": "Node.js on a Fedora OS Docker Container",
   "author": "First Last <first.last@example.com>",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js"
-  },
-  "dependencies": {
-    "express": "^4.13.3"
   }
 }

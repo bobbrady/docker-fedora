@@ -1,8 +1,23 @@
-fedora-node:
-  build: .
-  ports:
-    - '3000:3000'
-  volumes:
-    - ./src:/opt/node/src
-  environment:
-    - HOST_USER_ID
+version: '2'
+services:
+  mongo:
+      container_name: mongo
+      image: mongo
+      volumes:
+      - dbdata:/data/db
+      ports:
+        - '27017:27017'
+  node:
+    container_name: node 
+    image: bbrady/fedora-node
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./src:/opt/node/src
+    environment:
+      - HOST_USER_ID=1000
+    tty: true
+    depends_on:
+      - mongo
+volumes:
+    dbdata:

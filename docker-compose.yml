@@ -2,13 +2,13 @@ version: '2'
 services:
   mongo:
       container_name: mongo
-      image: mongo
+      image: bbrady/fedora-mongo
       volumes:
       - dbdata:/data/db
       ports:
         - '27017:27017'
   node:
-    container_name: node 
+    container_name: node
     image: bbrady/fedora-node
     ports:
       - '3000:3000'

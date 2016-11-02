@@ -40,7 +40,7 @@ docker exec -it small_jones bash
 entrypoint.sh  package.json  src
 [node@d0ba3c1f29c2 node]$
 ```
-* If you passed-in your HOST_USER_ID, you can now edit files in the shared volume of the container.  You changes will be seen in the container.  The changes will also be persisted in your local file system and survive a deletion of the container.
+* If you passed-in your HOST_USER_ID, you can now edit files in the shared volume of the container.  Your changes will be seen in the container.  The changes will also be persisted in your local file system and survive a deletion of the container.
 * When you are done running a container, you can shut it down and delete its volume:
 ```bash
 docker rm -fv <CONTAINER_ID>

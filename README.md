@@ -20,8 +20,7 @@ docker build -t <your_name>/<image-name>  .
 ```
 * Run a container based on the built image.  Pass in the _-dt_ switch to run it in background with a pseudo-TTY terminal open. The _-t_ switch will prevent the container from shutting down without having to apply a hack command like _tail -f /dev/null_ to keep it running.  You can point to a shared volume if you want to edit files live while the container is running. Note the use of the built-in linux shell command _id_ for automatically finding the UID of the current host user.
 ```bash
-docker run -p 3000:3000 -e HOST_USER_ID=$(id -u $USER) \
-  -v $PWD/src:/opt/node/src -dt <your_name>/fedora-node
+docker run -p 3000:3000 -e HOST_USER_ID=$(id -u $USER) -v $PWD/src:/opt/node/src -dt <your_name>/fedora-node
 ```
 * View the running container's process status
 ```bash
@@ -33,7 +32,7 @@ d0ba3c1f29c2        bbrady/fedora-node   "/opt/node/entrypoint"   10 seconds ago
 * Connect to the container that is running in background via a bash shell. You can sudo as the container microservice user using the _gosu_ command.  Now you are ready to execute any of your commands!
 ```bash
 docker exec -it small_jones bash
-[root@d0ba3c1f29c2 node]# gosu node bash
+[root@d0ba3c1f29c2 node]&#35; gosu node bash
 [node@d0ba3c1f29c2 node]$ ls
 entrypoint.sh  package.json  src
 [node@d0ba3c1f29c2 node]$

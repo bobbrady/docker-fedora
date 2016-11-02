@@ -38,3 +38,11 @@ docker exec -it small_jones bash
 entrypoint.sh  package.json  src
 [node@d0ba3c1f29c2 node]$
 ```
+* When you are done running a container, you can shut it down and delete its volume:
+```bash
+docker rm -fv <CONTAINER_ID>
+```
+or to clean-up all Containers by forcing quit and removing volumes (-fv switch)
+```bash
+docker rm -fv $(docker ps -aq)
+```

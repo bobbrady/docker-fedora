@@ -30,9 +30,9 @@ d0ba3c1f29c2        bbrady/fedora-node   "/opt/node/entrypoint"   10 seconds ago
 ```
 
 * Connect to the container that is running in background via a bash shell. You can sudo as the container microservice user using the _gosu_ command.  Now you are ready to execute any of your commands!
-```bash
+```javascript
 docker exec -it small_jones bash
-[root@d0ba3c1f29c2 node]&num; gosu node bash
+[root@d0ba3c1f29c2 node]# gosu node bash
 [node@d0ba3c1f29c2 node]$ ls
 entrypoint.sh  package.json  src
 [node@d0ba3c1f29c2 node]$

@@ -14,8 +14,7 @@ docker build -t <your_name>/<image-name>  .
 ```
 * Run a container based on the image.  You can point to a shared volume if you want to edit files live while the container is running. Note the use of the built-in linux shell command _id_ for automatically finding the UID of the current host user.  The command shown below assumes a container startup from a dir having a boiler plate Node.js project in a child 'scr' dir.
 ```bash
-docker run -p 3000:3000 -e HOST_USER_ID=$(id -u $USER) \
-  -v $PWD/src:/opt/node/src -it --rm <your_name>/<image-name>
+docker run -p 3000:3000 -e HOST_USER_ID=$(id -u $USER) -v $PWD/src:/opt/node/src -it <your_name>/<image-name>
 ```
 * Drop into a shell for interactive user.
 ```bash

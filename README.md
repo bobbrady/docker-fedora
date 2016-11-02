@@ -12,11 +12,14 @@ An attempt was made to follow best practices:
 * The non-root user for Node.js will aut matically have the UID of the host user running the container. This will allow the host user to be able to edit any files copied over or created by the container user.
 
 ## Usage
-* Checkout the files from the dir corresponding to the type of service app you want to run, e.g., Fedora Node for Node.js apps.
+* Make sure you have docker installed first.
+* Clone this repo and cd to one of the container dirs
+```bash
+ git clone https://github.com/bobbrady/docker-fedora.git
+ cd fedora-node
 * Build the image with the given Dockerfile:
 ```bash
-cd /path/to/Dockerfile
-docker build -t <your_name>/<image-name>  .
+docker build -t <your_name>/fedora-node .
 ```
 * Run a container based on the built image.  Pass in the _-dt_ switch to run it in background with a pseudo-TTY terminal open. The _-t_ switch will prevent the container from shutting down without having to apply a hack command like _tail -f /dev/null_ to keep it running.  You can point to a shared volume if you want to edit files live while the container is running. Note the use of the built-in linux shell command _id_ for automatically finding the UID of the current host user.
 ```bash
@@ -37,6 +40,8 @@ docker exec -it small_jones bash
 entrypoint.sh  package.json  src
 [node@d0ba3c1f29c2 node]$
 ```
+* If you passed-in your HOST_USER_ID, you can now edit files in the shared volume of the container.  You changes will be seen in the container.  The changes will also be persisted in your local file system and survive a deletion of the container.
+
 * When you are done running a container, you can shut it down and delete its volume:
 ```bash
 docker rm -fv <CONTAINER_ID>

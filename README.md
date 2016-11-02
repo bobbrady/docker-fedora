@@ -17,6 +17,7 @@ An attempt was made to follow best practices:
 ```bash
  git clone https://github.com/bobbrady/docker-fedora.git
  cd fedora-node
+```
 * Build the image with the given Dockerfile:
 ```bash
 docker build -t <your_name>/fedora-node .
@@ -31,7 +32,6 @@ docker ps -alias
 CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS                    NAMES
 d0ba3c1f29c2        bbrady/fedora-node   "/opt/node/entrypoint"   10 seconds ago      Up 8 seconds        0.0.0.0:3000->3000/tcp   small_jones
 ```
-
 * Connect to the container that is running in background via a bash shell. You can sudo as the container microservice user using the _gosu_ command.  Now you are ready to execute any of your commands!
 ```javascript
 docker exec -it small_jones bash
@@ -41,7 +41,6 @@ entrypoint.sh  package.json  src
 [node@d0ba3c1f29c2 node]$
 ```
 * If you passed-in your HOST_USER_ID, you can now edit files in the shared volume of the container.  You changes will be seen in the container.  The changes will also be persisted in your local file system and survive a deletion of the container.
-
 * When you are done running a container, you can shut it down and delete its volume:
 ```bash
 docker rm -fv <CONTAINER_ID>

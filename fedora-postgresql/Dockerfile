@@ -1,5 +1,5 @@
 FROM fedora
-MAINTAINER Bob Brady "bob@digibrady.com"
+MAINTAINER Bob Brady <bob@digibrady.com>
 
 # add our user and group first to make sure their IDs get assigned consistently
 RUN groupadd postgres && useradd -s /bin/bash -g postgres -m postgres

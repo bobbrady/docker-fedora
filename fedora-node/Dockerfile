@@ -1,5 +1,5 @@
 FROM fedora
-MAINTAINER Bob Brady "bob@digibrady.com"
+MAINTAINER Bob Brady <bob@digibrady.com>
 
 # Install nodejs and npm
 RUN dnf -y update && dnf -y install npm && dnf clean all
